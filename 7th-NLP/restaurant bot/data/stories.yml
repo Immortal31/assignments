@@ -1,0 +1,72 @@
+version: "2.0"
+
+stories:
+
+- story: collect restaurant booking info  # name of the story - just for debugging
+  steps:
+  - intent: greet                         # user message with no entities
+  - action: utter_ask_howcanhelp
+  - intent: inform                        # user message with no entities
+    entities:
+     - location: "rome"
+     - price: "cheap"                # action that the bot should execute
+  - action: utter_ask_cuisine
+  - intent: inform
+    entities:
+     - cuisine: "spanish"
+
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_ask_howcanhelp
+  - intent: restaurant_search
+    entities:
+    - location: Mumbai
+  - slot_was_set:
+    - location: Mumbai
+  - action: utter_ask_cuisine
+  - action: action_search_restaurants
+  - action: utter_goodbye
+
+- story: interactive_story_2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_ask_howcanhelp
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+    - location: Mumbai
+  - slot_was_set:
+    - cuisine: chinese
+  - slot_was_set:
+    - location: Mumbai
+  - action: action_search_restaurants
+  - action: utter_goodbye
+
+- story: interactive_story_3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_ask_howcanhelp
+  - intent: restaurant_search
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+  - slot_was_set:
+    - cuisine: chinese
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: Mumbai
+  - slot_was_set:
+    - location: Mumbai
+  - action: action_search_restaurants
+  - action: utter_goodbye
+
+- story: interactive_story_4
+  steps:
+  - intent: greet
+  - action: utter_goodbye

@@ -1,0 +1,84 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- restaurant_search
+- affirm
+- deny
+- thankyou
+- goodbye
+- search_concerts
+- search_venues
+- compare_reviews
+- bot_challenge
+- nlu_fallback
+- how_to_get_started
+- inform
+entities:
+- cuisine
+- location
+- name
+- people
+- price
+slots:
+  concerts:
+    type: list
+    influence_conversation: false
+  venues:
+    type: list
+    influence_conversation: false
+  likes_music:
+    type: bool
+    influence_conversation: true
+  cuisine:
+    type: text
+    influence_conversation: true
+  location:
+    type: text
+    influence_conversation: true
+responses:
+  utter_ask_cuisine:
+  - buttons:
+    - payload: Chinese
+      title: Chinese
+    - payload: Italian
+      title: Italian
+    - payload: South Indian
+      title: South Indian
+    - payload: North Indian
+      title: North Indian
+    text: what kind of cuisine would you like?
+  utter_ask_howcanhelp:
+  - text: how can I help you?
+  utter_ask_location:
+  - text: In what location?
+  utter_default:
+  - text: i cannot understand
+  utter_goodbye:
+  - text: goodbye :(
+  - text: Bye-bye
+  utter_greet:
+  - text: hey there! How may i help you
+  - text: Hi, How can I help you!
+  - text: Hey, How is it going. How May I help you Today
+  utter_happy:
+  - text: Feeling great
+  utter_cheer_up:
+  - text: Hurray
+  utter_did_that_help:
+  - text: Feeling sad
+  utter_iamabot:
+  - text: I am a bot
+actions:
+- action_search_restaurants
+- utter_ask_cuisine
+- utter_ask_howcanhelp
+- utter_ask_location
+- utter_cheer_up
+- utter_default
+- utter_did_that_help
+- utter_goodbye
+- utter_greet
+- utter_iamabot

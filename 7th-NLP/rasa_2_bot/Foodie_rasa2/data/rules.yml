@@ -1,0 +1,8 @@
+#rules:
+
+#- rule: if location is invalid
+#  condition:
+#  - slot_was_set:
+#    - check_loc: False
+#  steps:
+#  - action: utter_nooperation
