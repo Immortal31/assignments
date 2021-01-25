@@ -102,6 +102,9 @@
 - find south indain restaurant in [Mumbai](location) for budget of [less than 300](budget)
 - [amarparsekar@gmail.com](email)
 - find [south indian](cuisine) restaurant in [chennai](location) for budget between [300 and 700]{"entity": "budget", "value": " 300 to 700"}
+- find [north indian](cuisine) restaurant in [chennai](location) for budget between [300 and 700]{"entity": "budget", "value": " 300 to 700"}
+- find [north indian](cuisine) restaurant
+- find [south indian](cuisine) restaurant
 - find [chinese](cuisine) restaurant in [Nashik](location) for price between [300 and 700]{"entity": "budget", "value": " 300 to 700"}
 - find me restaurant
 - [ahmedabad](location)
@@ -115,6 +118,9 @@
 - find [chinese](cuisine) restaurant in [Mumbai](location)
 - [more than 700](budget)
 - [amarparsekar@gmail.com](email)
+- [Bokaro Steel City](location)
+- [surat](location)
+- [Warangal](location)
 
 ## synonym: 300 to 700
 - 300 and 700
@@ -164,3 +170,5 @@
 
 ## regex:pincode
 - [0-9]{6}
+
+

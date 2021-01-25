@@ -1,9 +1,33 @@
 digraph  {
 0 [class="start active", fillcolor=green, fontsize=12, label=START, style=filled];
 "-1" [class=end, fillcolor=red, fontsize=12, label=END, style=filled];
-1 [class=active, fontsize=12, label=action_session_start];
-2 [class="intent dashed active", label="  ?  ", shape=rect];
+1 [class="", fontsize=12, label=validate_location];
+2 [class="", fontsize=12, label=utter_greet];
+7 [class=active, fontsize=12, label=utter_ask_location];
+8 [class="", fontsize=12, label=validate_location];
+9 [class="", fontsize=12, label=utter_ask_budget];
+"-9" [class=ellipsis, label="..."];
+"-16" [class=ellipsis, label="..."];
+"-17" [class=ellipsis, label="..."];
+"-18" [class=ellipsis, label="..."];
+20 [class="intent dashed active", label="  ?  ", shape=rect];
+21 [class=intent, fillcolor=lightblue, label="/restaurant_search{\"location\": \"Mumbai\", \"budget\": \"less than 300\"}", shape=rect, style=filled];
+22 [class=intent, fillcolor=lightblue, label="/greet", shape=rect, style=filled];
+23 [class="intent active", fillcolor=lightblue, label="find me mexican restaurant", shape=rect, style=filled];
+24 [class=intent, fillcolor=lightblue, label="/restaurant_search{\"location\": \"Luckhnow\"}", shape=rect, style=filled];
 0 -> "-1"  [class="", key=NONE, label=""];
-0 -> 1  [class=active, key=NONE, label=""];
-1 -> 2  [class=active, key=NONE, label=""];
+0 -> 21  [class="", key=0];
+0 -> 22  [class="", key=0];
+0 -> 23  [class=active, key=0];
+1 -> "-17"  [class="", key=NONE, label=""];
+2 -> "-16"  [class="", key=NONE, label=""];
+7 -> "-18"  [class="", key=NONE, label=""];
+7 -> 20  [class=active, key=NONE, label=""];
+7 -> 24  [class="", key=0];
+8 -> 9  [class="", key=NONE, label=""];
+9 -> "-9"  [class="", key=NONE, label=""];
+21 -> 1  [class="", key=0];
+22 -> 2  [class="", key=0];
+23 -> 7  [class=active, key=0];
+24 -> 8  [class="", key=0];
 }

@@ -275,3 +275,20 @@
     - slot{"email": "amarparsekar@gmail.com"}
     - send_email
     - utter_goodbye
+	
+## user story_18
+* restaurant_search{"cuisine": "chinese", "Location": null}
+    - slot{"cuisine": "chinese"}
+    - utter_ask_location
+* restaurant_search{"location": "Bokaro Steel City"}
+    - slot{"location": "Bokaro Steel City"}
+    - validate_location
+    - slot{"check_loc": true}
+    - utter_ask_budget
+* restaurant_search{"budget": "more than 700"}
+    - slot{"budget": "more than 700"}
+    - action_search_restaurants
+    - slot{"location": "Bokaro Steel City"}
+    - utter_ask_email
+* negation
+    - utter_goodbye
